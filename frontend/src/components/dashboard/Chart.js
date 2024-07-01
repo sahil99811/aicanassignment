@@ -4,13 +4,13 @@ import { Pie } from "react-chartjs-2";
 
 Chart.register(...registerables);
 
-export default function DataChart({ courses }) {
-
+export default function DataChart( analysis ) {
+ console.log(analysis)
   const chartDataStudents = {
     labels: ["Total Teachers Salary","Income Generated from student Fees"],
     datasets: [
       {
-        data: [10000,200000],
+        data: [`${analysis?.data?.totalSalary}`,`${analysis?.data?.totalFeesCollected}`],
         backgroundColor: ["#FF6384", "#36A2EB"],
       },
       

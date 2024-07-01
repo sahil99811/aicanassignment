@@ -19,13 +19,13 @@ router.post('/addstudent', auth, addStudent);
 router.post('/addclass', auth, addClass);
 
 // Route to get all classes, requires authentication
-router.get('/getclass', auth, getAllClass);
+router.get('/getallclass', auth, getAllClass);
 
 // Route to get class analytics, requires authentication
 router.get('/classanalytics', auth, classAnalytics);
 
 // Route to get specific class analytic, requires authentication
-router.get('/classAnalytic', auth, classAnalytic);
+router.get('/classAnalytic/:id', auth, classAnalytic);
 
 // Route to get school analysis, requires authentication
 router.get('/analysis', auth, getAnalysis);

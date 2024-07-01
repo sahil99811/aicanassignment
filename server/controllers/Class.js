@@ -1,18 +1,18 @@
 const Class=require('../models/Class')
 const Teacher=require('../models/Teacher')
-exports.addClass=async ()=>{
+exports.addClass=async (req,res)=>{
     try {
         const {id}=req.user;
-        const {className,section,teacher,classFees,year}=req.body;
+        const {className,section,year,teacherId,classFees}=req.body;
         const newClass=await Class.create({
             schoolId:id,
             className,
             section:section,
             year:year,
-            teacher:teacher,
+            teacher:teacherId,
             classFees
         })
-        await Teacher.findByIdAndUpdate(teacher,{assignedClass:newClass._id})
+        await Teacher.findByIdAndUpdate(teacherId,{assignedClass:newClass._id})
         return res.status(200).json({
             success:true,
             message:"Teacher Created Successfully..."
@@ -99,10 +99,10 @@ exports.classAnalytic = async (req, res) => {
 exports.getAllClass=async (req,res)=>{
     try {
         const {id}=req.user;
-        const res=await Class.find({schoolId:id});
+        const result=await Class.find({schoolId:id});
         return res.status(200).json({
             success:true,
-            data:res,
+            classes:result,
             message:"All Class fetched Successfully..."
         })
     } catch (error) {

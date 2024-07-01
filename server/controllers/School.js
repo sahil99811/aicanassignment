@@ -12,7 +12,7 @@ exports.getAnalysis = async (req, res) => {
          if (interval === 'month') {
            date.setDate(date.getMonth() - 1);
          } else if (interval === 'year') {
-           date.setDate(date.getDate() - 7);
+           date.setDate(date.getFullYear() - 1);
          }
         let totalFeesCollected = 0;
 
@@ -40,14 +40,19 @@ exports.getAnalysis = async (req, res) => {
             {
                 $group: {
                     _id: "$schoolId",
-                    totalSalary: { $sum: "$salary" }
+                    totalSalary: { $sum: "$salary" },
                 }
             }
         ]);
+        const totalTeachers=await Teacher.find(matchCondition).countDocuments();
+        
         return res.status(200).json({
             success: true,
-            totalFeesCollected,
-            totalSalary: result[0] ? result[0].totalSalary : 0,
+            data:{
+                totalFeesCollected,
+               totalSalary: result[0] ? result[0].totalSalary : 0,
+               totalTeachers:totalTeachers,
+            },
             message: "Fetched Successully"
         });
     } catch (error) {

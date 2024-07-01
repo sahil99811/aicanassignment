@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast';
 import {getAllTeacher} from '../../../apis/school'
 import { useSelector } from 'react-redux';
+import {addClass} from '../../../apis/school'
 export default function AddClass() {
   const [teachers,setTeachers]=useState([]);
   const {token}=useSelector(state=>state.auth);
@@ -22,26 +23,40 @@ export default function AddClass() {
       [name]:value
     }))
   }
-  const onSubmitHandler=(event)=>{
+  const onSubmitHandler=async (event)=>{
     event.preventDefault();
-    console.log(formdata.classFees,formdata);
-    if(!formdata.className||!formdata.gender||!formdata.section){
+    console.log(formdata);
+    if(!formdata.className||!formdata.section||!formdata.year||!formdata.teacherId||!formdata.classFees){
       toast.error("All field are required");
       return;
     }
-
+    const result=await addClass(formdata,token);
+    if(result){
+      setFormData({
+          className:"",
+          section:"",
+          year:"",
+          teacherId:"",
+          classFees:""
+      })
+      getTeachers();
+    }
   }
-
-  useEffect(()=>{
-     (async ()=>{
-        const res=await getAllTeacher(token);
-        if(res){
-          setTeachers(res);
-          return
-        }
+  async function getTeachers(){
+    const res=await getAllTeacher(token);
+    if(res){
+      if(res.length===0){
         toast.error("First Create A teacher")
         navigate('/dashboard/addteacher')
-     })()
+        return;
+      }
+      setTeachers(res);
+        return
+    }
+   
+  }
+  useEffect(()=>{
+     getTeachers();
   },[])
   return (
     <div className='w-[100%] h-[100vh] flex items-center justify-center'>

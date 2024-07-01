@@ -139,8 +139,8 @@ export default function Analytics() {
                       <td>{quiz.studentFees}</td>
                       <td>{quiz.students}</td>
                       <td style={{ "color": "black" }}>
-                        <Link to={'/dashboard/analytics/123'}>
-                          Question Wise Analysis
+                        <Link to={'/dashboard/analytics/'}>
+                          Class Wise Analysis
                         </Link>
                       </td>
                     </tr>
