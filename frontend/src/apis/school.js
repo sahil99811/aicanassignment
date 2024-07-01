@@ -13,8 +13,8 @@ export const addTeacher=async (formdata,token)=>{
             }
         });
         if (result.status === 200) {
-            toast.success(result?.data?.message); // Show success toast
-            return true; // Return the result if status is 201
+            toast.success(result?.data?.message);
+            return true; 
         }
        return false;
     } catch (error) {
