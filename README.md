@@ -3,6 +3,18 @@
 
 A comprehensive system for managing schools, including teachers, students, classes, and user authentication. Built with ReactJS,Node.js, Express, and MongoDB.
 
+## Project Overview
+Initially, the application is designed for a single user who can perform all administrative functions:
+- Register and login to the application.
+- Add teachers, classes, and students.
+- View statistics related to teachers, classes,expenses and fees collected.
+
+## Future Enhancements
+In future phases, the application will include multiple user roles:
+- **Admin**: Manages overall system operations, including user roles and permissions.
+- **Receptionist**: Adds and manages teachers on the platform.
+- **Teacher**: Manages students, checks fee details, and accesses class analytics.
+
 ## Features
 
 - User Authentication (Signup, Login)
