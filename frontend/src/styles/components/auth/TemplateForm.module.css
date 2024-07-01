@@ -1,0 +1,32 @@
+.container{
+    width: 65%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 4px solid rgba(237, 245, 254, 1); 
+}
+.container>img{
+    width: 450px;
+}
+.lowerContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: -30px;
+}
+.lowerContainer>p{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color:rgba(255, 255, 255, 1) ;
+    font-family: 'Open Sans',sans-serif;
+}
+.lowerContainer>span{
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 300;
+    color:rgba(255, 255, 255, 1) ;
+    font-family: 'Open Sans',sans-serif;
+}

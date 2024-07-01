@@ -1,0 +1,42 @@
+.container{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    height: 100vh;
+}
+
+.lowercontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 13px;
+    width: 100%;
+}
+.lowercontainer>p{
+    color:rgba(130, 130, 130, 1);
+    font-family: 'Open Sans',sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+.button{
+    width: 75%;
+    height: 35px;
+    border:solid;
+    border-radius:25px;
+    border-width: 1.5px;
+    background-color:inherit;
+    border-color:rgba(23, 162, 184, 1) ;
+    color: rgba(23, 162, 184, 1);
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 400;
+    font-size: 0.95rem;
+    cursor: pointer;
+}

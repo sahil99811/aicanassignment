@@ -1,0 +1,62 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    width:100%;
+}
+.container>h2{
+    color:
+    rgba(0, 0, 0, 1);
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 600;
+    font-size: 1.35rem;
+    margin-left: 2.2rem;
+    margin-top: 1.9rem;
+}
+
+.formcontainer{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    width:35%;
+    margin-left: 2.2rem;
+}
+.inputDiv {
+    border-width: 1.7px;
+    border-style: solid;
+    border-color: rgba(208, 208, 208, 1);
+    border-radius:8px;
+    display: flex;
+    gap: 5px;
+    padding: 2px 4px;
+    height: 2.2rem;
+}
+
+.inputDiv>img{
+    width: 25px;
+    cursor: pointer;
+}
+.inputDiv>input{
+    width: 90%;
+    outline:none;
+    border: none; 
+    font-size: 1rem;
+    color:rgba(130, 130, 130, 1) ;
+    font-weight: 400;
+    font-family: 'Open Sans',sans-serif;
+}
+
+.updateButton{
+    width: 75%;
+    height:38px;
+    background-color:rgba(23, 162, 184, 1);
+    color:rgba(255, 255, 255, 1) ;
+    font-size:0.85rem ;
+    font-family:'Open Sans',sans-serif ;
+    font-weight: 400;
+    cursor: pointer;
+    border: none;
+    border-radius:25px;
+    width:35%;
+    margin-left: 2.2rem;
+}

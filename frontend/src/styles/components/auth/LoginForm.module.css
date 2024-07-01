@@ -1,0 +1,61 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:2.5rem;
+    width:100%;
+}
+.container>h2{
+    color: rgba(52, 52, 52, 1);
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 600;
+    font-size: 1.45rem;
+}
+
+.formcontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:15px;
+    width:100%;
+}
+.inputDiv {
+    border-width: 1.7px;
+    border-style: solid;
+    border-color: rgba(208, 208, 208, 1);
+    border-radius:8px;
+    width:75%;
+    display: flex;
+    gap: 5px;
+    padding: 2px 4px;
+    height: 2.2rem;
+}
+
+.inputDiv>img{
+    width: 25px;
+    cursor: pointer;
+}
+.inputDiv>input{
+    width: 90%;
+    outline:none;
+    border: none; 
+    font-size: 1rem;
+    color:rgba(130, 130, 130, 1) ;
+    font-weight: 400;
+    font-family: 'Open Sans',sans-serif;
+}
+
+.loginButton{
+    width: 75%;
+    height:35px;
+    margin-top: -10px;
+    background-color:rgba(23, 162, 184, 1);
+    color:rgba(255, 255, 255, 1) ;
+    font-size:0.85rem ;
+    font-family:'Open Sans',sans-serif ;
+    font-weight: 400;
+    cursor: pointer;
+    border: none;
+    border-radius:25px;
+}
